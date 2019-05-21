@@ -1,3 +1,15 @@
+/* ------------modal */
+
+.modal {
+  text-align: center;
+}
+
+.readyStart {
+  margin: 0 auto;
+}
+
+/* ----------header */
+
 header {
   display: flex;
   justify-content: space-between;
