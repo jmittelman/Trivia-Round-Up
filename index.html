@@ -35,7 +35,54 @@
   ></script>
   <script src="main.js"></script>
   <body>
-    <h1>hello</h1>
-    <button type="button" class="btn btn-primary">Primary</button>
+    <header>
+      <h1>Trivia</h1>
+      <div class="score card">
+        <div class="card-body">
+          <h2>Score</h2>
+          <h2>1 of 10</h2>
+        </div>
+      </div>
+    </header>
+
+    <section class="question container">
+      <div class="ask card">
+        <div class="card-body">
+          Question 1: This is a question?
+        </div>
+      </div>
+    </section>
+
+    <section class="answers container">
+      <div class="choice card">
+        <div class="card-body">
+          A) This is an answer
+        </div>
+        <button class="btn btn-primary">Select</button>
+      </div>
+
+      <div class="choice card">
+        <div class="card-body">
+          B) This is an answer
+        </div>
+        <button class="btn btn-primary">Select</button>
+      </div>
+
+      <div class="choice card">
+        <div class="card-body">
+          C) This is an answer
+        </div>
+        <button class="btn btn-primary">Select</button>
+      </div>
+    </section>
+
+    <section class="result container">
+      <div class="prompt card">
+        <div class="card-body">
+          Correct. Great job, pardner!
+        </div>
+        <button class="next btn btn-primary">Next</button>
+      </div>
+    </section>
   </body>
 </html>

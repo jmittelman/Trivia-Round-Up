@@ -1,3 +1,56 @@
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
 h1 {
-  color: green;
+  margin: 20px 0 0 30px;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+.score {
+  background: yellow;
+  width: 100px;
+  text-align: center;
+  margin: 20px 30px 0 0;
+}
+
+.question {
+  width: 600px;
+  margin: 100px auto 30px auto;
+}
+
+.ask {
+  background: blue;
+}
+
+.answers {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.choice {
+  background: yellow;
+  width: 350px;
+  padding: 20px;
+  margin: 20px;
+}
+
+.result {
+  margin: 30px auto;
+  width: 400px;
+}
+
+.prompt {
+  background: purple;
+  text-align: center;
+}
+
+.next {
+  width: 150px;
+  margin: 20px auto;
 }
