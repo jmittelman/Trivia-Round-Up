@@ -2,78 +2,90 @@ console.log("Check me out!");
 
 // ----------------Data
 
-// create object with 10 questions + 2 wrong answers and
-// 1 correct answer for each
+// create array with 10 questions + 1 correct answer
+// and 2 wrong answers for each
 
-var trivia = {
-  question1: {
+var trivia = [
+  {
+    name: "question1",
+    question: "What's up?",
+    correctAnswer: "",
+    wrongAnswer1: "",
+    wrongAnswer2: ""
+  },
+  {
+    name: "question2",
     question: "",
     correctAnswer: "",
     wrongAnswer1: "",
     wrongAnswer2: ""
   },
-  question2: {
+  {
+    name: "question3",
     question: "",
     correctAnswer: "",
     wrongAnswer1: "",
     wrongAnswer2: ""
   },
-  question3: {
+  {
+    name: "question4",
     question: "",
     correctAnswer: "",
     wrongAnswer1: "",
     wrongAnswer2: ""
   },
-  question4: {
+  {
+    name: "question4",
     question: "",
     correctAnswer: "",
     wrongAnswer1: "",
     wrongAnswer2: ""
   },
-  question4: {
+  {
+    name: "question5",
     question: "",
     correctAnswer: "",
     wrongAnswer1: "",
     wrongAnswer2: ""
   },
-  question5: {
+  {
+    name: "question6",
     question: "",
     correctAnswer: "",
     wrongAnswer1: "",
     wrongAnswer2: ""
   },
-  question6: {
+  {
+    name: "question7",
     question: "",
     correctAnswer: "",
     wrongAnswer1: "",
     wrongAnswer2: ""
   },
-  question7: {
+  {
+    name: "question8",
     question: "",
     correctAnswer: "",
     wrongAnswer1: "",
     wrongAnswer2: ""
   },
-  question8: {
+  {
+    name: "question9",
     question: "",
     correctAnswer: "",
     wrongAnswer1: "",
     wrongAnswer2: ""
   },
-  question9: {
-    question: "",
-    correctAnswer: "",
-    wrongAnswer1: "",
-    wrongAnswer2: ""
-  },
-  question10: {
+  {
+    name: "question10",
     question: "",
     correctAnswer: "",
     wrongAnswer1: "",
     wrongAnswer2: ""
   }
-};
-// --------------functinality
+];
+
+// --------------functinality notes
 
 // show modal box with "Ready?/Get Started" button
 
@@ -94,3 +106,15 @@ var trivia = {
 // continue for total 10 times
 
 // show modal box with final score and ask to play again
+
+// --------------Get started / load first question
+
+const getStarted = document.querySelector(".readyStart");
+getStarted.addEventListener("click", function(evt) {
+  evt.preventDefault();
+  let newQuestion = document.createElement("div");
+  newQuestion.className = "questionContent card-body";
+  newQuestion.innerHTML = trivia[0].question;
+  document.querySelector(".ask").appendChild(newQuestion);
+  $("#myModal").modal("hide");
+});

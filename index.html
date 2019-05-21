@@ -33,7 +33,10 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <script src="main.js"></script>
+
+    <!-- utilize modal show method from tutorial republic
+  https://www.tutorialrepublic.com/faq/how-to-launch-bootstrap-modal-on-page-load.php -->
+
     <script type="text/javascript">
       $(document).ready(function() {
         $("#myModal").modal("show");
@@ -49,7 +52,7 @@
       role="dialog"
       data-show="true"
     >
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h2 class="modal-title">Trivia</h2>
@@ -86,9 +89,9 @@
 
     <section class="question container">
       <div class="ask card">
-        <div class="card-body">
+        <!-- <div class="questionContent card-body">
           Question 1: This is a question?
-        </div>
+        </div> -->
       </div>
     </section>
 
@@ -123,5 +126,6 @@
         <button class="next btn btn-primary">Next</button>
       </div>
     </section>
+    <script src="main.js"></script>
   </body>
 </html>
