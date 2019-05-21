@@ -18,6 +18,8 @@ h2 {
   margin: 20px 30px 0 0;
 }
 
+/* ----question box */
+
 .question {
   width: 600px;
   margin: 100px auto 30px auto;
@@ -26,6 +28,8 @@ h2 {
 .ask {
   background: blue;
 }
+
+/* --------answer boxes */
 
 .answers {
   display: flex;
@@ -39,6 +43,8 @@ h2 {
   padding: 20px;
   margin: 20px;
 }
+
+/* ----------result box */
 
 .result {
   margin: 30px auto;
