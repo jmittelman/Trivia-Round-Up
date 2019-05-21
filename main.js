@@ -9,9 +9,9 @@ var trivia = [
   {
     name: "question1",
     question: "What's up?",
-    correctAnswer: "",
-    wrongAnswer1: "",
-    wrongAnswer2: ""
+    correctAnswer: "correctomundo!",
+    wrongAnswer1: "not really",
+    wrongAnswer2: "fat chance"
   },
   {
     name: "question2",
@@ -112,9 +112,32 @@ var trivia = [
 const getStarted = document.querySelector(".readyStart");
 getStarted.addEventListener("click", function(evt) {
   evt.preventDefault();
+  $("#myModal").modal("hide");
   let newQuestion = document.createElement("div");
   newQuestion.className = "questionContent card-body";
   newQuestion.innerHTML = trivia[0].question;
   document.querySelector(".ask").appendChild(newQuestion);
-  $("#myModal").modal("hide");
+  let newCorrectAnswer = document.createElement("div");
+  newCorrectAnswer.className = "answer1Here card-body";
+  newCorrectAnswer.innerHTML = trivia[0].correctAnswer;
+  referenceNode = document.querySelector(".select1");
+  document
+    .querySelector(".choice1")
+    .insertBefore(newCorrectAnswer, referenceNode);
+
+  let newWrongAnswer1 = document.createElement("div");
+  newWrongAnswer1.className = "answer2Here card-body";
+  newWrongAnswer1.innerHTML = trivia[0].wrongAnswer1;
+  referenceNode2 = document.querySelector(".select2");
+  document
+    .querySelector(".choice2")
+    .insertBefore(newWrongAnswer1, referenceNode2);
+
+  let newWrongAnswer2 = document.createElement("div");
+  newWrongAnswer2.className = "answer3Here card-body";
+  newWrongAnswer2.innerHTML = trivia[0].wrongAnswer2;
+  referenceNode3 = document.querySelector(".select3");
+  document
+    .querySelector(".choice3")
+    .insertBefore(newWrongAnswer2, referenceNode3);
 });
