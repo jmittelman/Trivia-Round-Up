@@ -143,14 +143,18 @@ getStarted.addEventListener("click", function(evt) {
 });
 // ------------------------select an answer
 
-// let correctChoice = document.createElement("div");
-// correctChoice.className = "prompt card";
-// document.querySelector(".result").appendChild(correctChoice);
-// let correctChoice2 = document.createElement("div");
-// correctChoice2.className = "card-body";
-// document.querySelector(".prompt").appendChild(correctChoice2);
-// correctChoice2.innerText = "Correct. Great job, pardner!";
-// let correctChoice3 = document.createElement("button");
-// correctChoice3.className = "next btn btn-primary";
-// document.querySelector("prompt").appendChild(correctChoice3);
-// correctChoice3.innerText = "Next";
+const reveal = document.querySelector(".select1");
+reveal.addEventListener("click", function(evt) {
+  evt.preventDefault;
+  let correctChoice = document.createElement("div");
+  correctChoice.className = "prompt card";
+  document.querySelector(".result").appendChild(correctChoice);
+  let correctChoice2 = document.createElement("div");
+  correctChoice2.className = "card-body";
+  document.querySelector(".prompt").appendChild(correctChoice2);
+  correctChoice2.innerHTML = "Correct. Great job, pardner!";
+  let correctChoice3 = document.createElement("button");
+  correctChoice3.className = "next btn btn-info";
+  document.querySelector(".prompt").appendChild(correctChoice3);
+  correctChoice3.innerHTML = "Try Another";
+});
