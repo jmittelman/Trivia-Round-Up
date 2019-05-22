@@ -11,6 +11,21 @@ body {
   text-align: center;
 }
 
+.modal-header {
+  border-bottom: 0 none;
+  text-align: center;
+}
+
+.modal-footer {
+  border-top: 0 none;
+}
+
+h3 {
+  font-size: 30px;
+  font-family: "Stylish", sans-serif;
+  color: #6e757c;
+}
+
 .readyStart {
   margin: 0 auto;
 }
@@ -20,6 +35,25 @@ body {
 header {
   display: flex;
   justify-content: space-between;
+}
+.score {
+  background: url("barrel2.png") no-repeat center;
+  background-size: 60%;
+  width: 150px;
+  text-align: center;
+  margin: 20px 30px 0 0;
+  color: white;
+  position: relative;
+}
+
+.circle {
+  width: 65px;
+  height: 65px;
+  background: #48a0b5;
+  border-radius: 50%;
+  border: 1px solid white;
+  position: absolute;
+  left: 95px;
 }
 
 h1 {
@@ -32,16 +66,8 @@ h1 {
 }
 
 h2 {
-  font-size: 16px;
-}
-
-.score {
-  background: url("barrel.png") no-repeat center;
-  background-size: 60%;
-  width: 150px;
-  text-align: center;
-  margin: 20px 30px 0 0;
-  color: white;
+  font-size: 14px;
+  margin: 10px 0 0 0;
 }
 
 /* ----question box */
@@ -81,8 +107,9 @@ h2 {
 }
 
 .prompt {
-  background: purple;
+  background: #d82f4e;
   text-align: center;
+  color: #303844;
 }
 
 .next {
