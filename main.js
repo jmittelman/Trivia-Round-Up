@@ -8,7 +8,7 @@ console.log("Check me out!");
 var trivia = [
   {
     name: "question1",
-    question: "What's up?",
+    question: "Am I Right?",
     correctAnswer: "correctomundo!",
     wrongAnswer1: "not really",
     wrongAnswer2: "fat chance"
@@ -141,3 +141,16 @@ getStarted.addEventListener("click", function(evt) {
     .querySelector(".choice3")
     .insertBefore(newWrongAnswer2, referenceNode3);
 });
+// ------------------------select an answer
+
+// let correctChoice = document.createElement("div");
+// correctChoice.className = "prompt card";
+// document.querySelector(".result").appendChild(correctChoice);
+// let correctChoice2 = document.createElement("div");
+// correctChoice2.className = "card-body";
+// document.querySelector(".prompt").appendChild(correctChoice2);
+// correctChoice2.innerText = "Correct. Great job, pardner!";
+// let correctChoice3 = document.createElement("button");
+// correctChoice3.className = "next btn btn-primary";
+// document.querySelector("prompt").appendChild(correctChoice3);
+// correctChoice3.innerText = "Next";

@@ -1,3 +1,10 @@
+body {
+  background: #d82f4e;
+}
+.card {
+  border: none;
+}
+
 /* ------------modal */
 
 .modal {
@@ -16,7 +23,12 @@ header {
 }
 
 h1 {
-  margin: 20px 0 0 30px;
+  margin: 40px 0 20px 30px;
+  font-family: "Stylish", sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  transform: rotate(-5deg);
+  color: white;
 }
 
 h2 {
@@ -24,10 +36,12 @@ h2 {
 }
 
 .score {
-  background: yellow;
-  width: 100px;
+  background: url("barrel.png") no-repeat center;
+  background-size: 60%;
+  width: 150px;
   text-align: center;
   margin: 20px 30px 0 0;
+  color: white;
 }
 
 /* ----question box */
@@ -38,7 +52,10 @@ h2 {
 }
 
 .ask {
-  background: blue;
+  background: #d82f4e;
+  color: white;
+  font-size: 30px;
+  font-family: "Stylish", sans-serif;
 }
 
 /* --------answer boxes */
@@ -50,7 +67,7 @@ h2 {
 }
 
 .choice {
-  background: yellow;
+  background: white;
   width: 350px;
   padding: 20px;
   margin: 20px;
@@ -71,4 +88,11 @@ h2 {
 .next {
   width: 150px;
   margin: 20px auto;
+}
+
+footer {
+  background: #6e757c;
+  text-align: center;
+  padding: 20px;
+  margin: 0;
 }
