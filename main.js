@@ -61,33 +61,6 @@ var trivia = [
   }
 ];
 
-// --------------functinality notes
-
-// show modal box with "Ready?/Get Started" button
-
-// use event listener for click on button
-
-// remove modal and then provide question 1 by adding question text
-// to the question box and answer text to the answer boxes
-
-// assign answers to the three containers
-// when they press select button compare answer in that box to correct answer
-
-// if answer is correct answer return correct answer prompt
-// if answer is wrong answer return wrong answer prompt
-
-// if correct answer increment the score
-
-// use event listener for click on Try Another button
-
-// clear question box and answer boxes
-
-// then provide question 2
-
-// continue for total 10 times
-
-// show modal box with final score and ask to play again
-
 // --------------Get started / load first question
 
 var score = 0;
@@ -157,6 +130,11 @@ function checkAnswer() {
     madeChoice.className = "prompt card box";
     madeChoice.innerHTML = html;
     document.querySelector(".result").appendChild(madeChoice);
+    const tryAnother = document.querySelector(".next");
+    tryAnother.addEventListener("click", function(evt) {
+      evt.preventDefault;
+      wipeTheBoard();
+    });
   } else {
     var html2 = [
       '<div class="card-body">Sorry. That is wrong pardner!</div>',
@@ -167,29 +145,22 @@ function checkAnswer() {
     madeChoice2.className = "prompt card box";
     madeChoice2.innerHTML = html2;
     document.querySelector(".result").appendChild(madeChoice2);
+    const tryAnother = document.querySelector(".next");
+    tryAnother.addEventListener("click", function(evt) {
+      evt.preventDefault;
+      wipeTheBoard();
+    });
   }
 }
 
-// // // -------------------------------click on try another button
+// // // -------------------click on try another button
 
-// // var wipeTheBoard = function() {
-// //   var clearOut = doucment.querySelectorAll(".box");
-// //   if (clearOut.length > 0) {
-// //     for (i = 0; i < clearOut.length; i++) {
-// //       let a = document.querySelector(".question");
-// //       a.removeChild(clearOut[i]);
-// //       let b = document.querySelectorAll(".choice");
-// //       b.removeChild(clearOut[i]);
-// //       let c = document.querySelector(".result");
-// //       b.removeChild(clearOut[i]);
-// //     }
-// //   }
-// // };
-
-// // const next = document.querySelector(".next");
-// // next.addEventListener("click", function(evt) {
-// //   evt.preventDefault;
-// //   wipeTheBoard();
-// // });
-
-// // // how does it know what question it's on?
+var wipeTheBoard = function() {
+  var clearOut = document.querySelectorAll(".box");
+  if (clearOut.length > 0) {
+    for (i = 0; i < clearOut.length; i++) {
+      let a = clearOut[i].parentNode;
+      a.removeChild(clearOut[i]);
+    }
+  }
+};
