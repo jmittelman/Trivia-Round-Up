@@ -95,9 +95,10 @@ h2 {
 
 .choice {
   background: white;
-  width: 350px;
+  width: 30%;
   padding: 20px;
   margin: 20px;
+  font-family: "Stylish", sans-serif;
 }
 
 /* ----------result box */
@@ -111,6 +112,7 @@ h2 {
   background: #d82f4e;
   text-align: center;
   color: #303844;
+  font-family: "Stylish", sans-serif;
 }
 
 .next {

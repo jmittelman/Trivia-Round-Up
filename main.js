@@ -3,63 +3,61 @@
 // create array with 10 questions + 1 correct answer
 // and 2 wrong answers for each
 
-var score = 0;
-
 var trivia = [
   {
     question: "Am I Right?",
-    answers: ["yessiree!", "not really", "fat chance"],
+    answers: ["yessiree!", "not really", "nope"],
     correctAnswer: "yessiree!"
   },
   {
-    question: "",
-    answers: "",
-    correctAnswer: ""
+    question: "What about now?",
+    answers: ["not quite", "no way", "yep!"],
+    correctAnswer: "yep"
   },
   {
-    question: "",
-    answers: "",
-    correctAnswer: ""
+    question: "Am I handsome?",
+    answers: ["nope", "very much so", "sorry"],
+    correctAnswer: "very much so"
   },
   {
-    question: "",
-    answers: "",
-    correctAnswer: ""
+    question: "what color?",
+    answers: ["blue", "red", "green"],
+    correctAnswer: "red"
   },
   {
-    question: "",
-    answers: "",
-    correctAnswer: ""
+    question: "what day?",
+    answers: ["Sunday", "Monday", "Thursday"],
+    correctAnswer: "Thursday"
   },
   {
-    question: "",
-    answers: "",
-    correctAnswer: ""
+    question: "what year",
+    answers: ["2019", "2025", "2005"],
+    correctAnswer: "2019"
   },
   {
-    question: "",
-    answers: "",
-    correctAnswer: ""
+    question: "wolf?",
+    answers: ["maybe", "definitely", "hardly"],
+    correctAnswer: "definitely"
   },
   {
-    question: "",
-    answers: "",
-    correctAnswer: ""
+    question: "tell a story?",
+    answers: ["please, no", "boring...", "go ahead"],
+    correctAnswer: "go ahead"
   },
   {
-    question: "",
-    answers: "",
-    correctAnswer: ""
+    question: "what's for lunch?",
+    answers: ["sandwich", "pizza", "nothing"],
+    correctAnswer: "sandwich"
   },
   {
-    question: "",
-    answers: "",
-    correctAnswer: ""
+    question: "how many times?",
+    answers: ["3", "6", "9"],
+    correctAnswer: "9"
   },
   {
-    question: "",
-    answers: "",
-    correctAnswer: ""
+    question: "okay?",
+    answers: ["not okay", "yeah, right", "okay"],
+    correctAnswer: "okay"
   }
 ];
 
@@ -92,6 +90,7 @@ var trivia = [
 
 // --------------Get started / load first question
 
+var score = 0;
 const scoreStart = document.querySelector(".score");
 scoreStart.innerHTML = score;
 
@@ -99,6 +98,7 @@ const getStarted = document.querySelector(".readyStart");
 getStarted.addEventListener("click", function(evt) {
   evt.preventDefault();
   $("#myModal").modal("hide");
+
   let newQuestion = document.createElement("div");
   newQuestion.className = "questionContent card-body box";
   newQuestion.innerHTML = trivia[0].question;
@@ -124,91 +124,72 @@ getStarted.addEventListener("click", function(evt) {
 });
 // ------------------------select an answer
 
-// const reveal = document.querySelector(".select1");
-// reveal.addEventListener("click", function(evt) {
-//   evt.preventDefault;
-//   let correctChoice = document.createElement("div");
-//   correctChoice.className = "prompt card";
-//   document.querySelector(".result").appendChild(correctChoice);
-//   let correctChoice2 = document.createElement("div");
-//   correctChoice2.className = "card-body";
-//   document.querySelector(".prompt").appendChild(correctChoice2);
-//   correctChoice2.innerHTML = "Correct. Great job, pardner!";
-//   let correctChoice3 = document.createElement("button");
-//   correctChoice3.className = "next btn btn-info";
-//   document.querySelector(".prompt").appendChild(correctChoice3);
-//   correctChoice3.innerHTML = "Try Another";
-// });
-
-//  click on select button
-// if button is linked to present correct answer
-// then display correct Message
+// click on a select button
+// if button is linked to correct answer
+// then display "correct" Message
 // else if button is linked to incorrect answer
-// then display incorrect message
+// then display "incorrect" message
+
+let thisAnswer = "";
 
 const answers = document.querySelector(".answers");
 answers.addEventListener("click", e => {
   e.preventDefault();
   const clickedBox = e.target;
-  //   console.log(clickedBox.innerHTML);
   const targetParent = clickedBox.parentElement;
-  //   return targetParent.querySelector(".answer-card").innerHTML;
-  let thisAnswer = targetParent.querySelector(".answer-card").innerHTML;
+  thisAnswer = targetParent.querySelector(".answer-card").innerHTML;
+  checkAnswer();
 });
 
-if (thisAnswer === trivia[0].correctAnswer) {
-  score++;
-  const reveal = document.querySelector(".select1");
-  reveal.addEventListener("click", function(evt) {
-    evt.preventDefault;
-    let correctChoice = document.createElement("div");
-    correctChoice.className = "prompt card box";
-    document.querySelector(".result").appendChild(correctChoice);
-    let correctChoice2 = document.createElement("div");
-    correctChoice2.className = "card-body";
-    document.querySelector(".prompt").appendChild(correctChoice2);
-    correctChoice2.innerHTML = "Correct. Great job, pardner!";
-    let correctChoice3 = document.createElement("button");
-    correctChoice3.className = "next btn btn-info";
-    document.querySelector(".prompt").appendChild(correctChoice3);
-    correctChoice3.innerHTML = "Try Another";
-  });
-} else {
-  const reveal2 = document.querySelector(".select1");
-  reveal2.addEventListener("click", function(evt) {
-    evt.preventDefault;
+function checkAnswer() {
+  if (thisAnswer === trivia[0].correctAnswer) {
+    function increaseScore() {
+      scoreStart.innerHTML = score + 1;
+    }
+    increaseScore();
+
+    var html = [
+      '<div class="card-body">Correct. Great job, pardner!</div>',
+      '<button class="next btn btn-info">Try Another</button>'
+    ].join("");
+
     let madeChoice = document.createElement("div");
     madeChoice.className = "prompt card box";
+    madeChoice.innerHTML = html;
     document.querySelector(".result").appendChild(madeChoice);
+  } else {
+    var html2 = [
+      '<div class="card-body">Sorry. That is wrong pardner!</div>',
+      '<button class="next btn btn-info">Try Another</button>'
+    ].join("");
+
     let madeChoice2 = document.createElement("div");
-    madeChoice2.className = "card-body";
-    document.querySelector(".prompt").appendChild(madeChoice2);
-    madeChoice2.innerHTML = "Sorry. That's wrong, pardner!";
-    let madeChoice3 = document.createElement("button");
-    madeChoice3.className = "next btn btn-info";
-    document.querySelector(".prompt").appendChild(madeChoice3);
-    madeChoice3.innerHTML = "Try Another";
-  });
+    madeChoice2.className = "prompt card box";
+    madeChoice2.innerHTML = html2;
+    document.querySelector(".result").appendChild(madeChoice2);
+  }
 }
 
-// -------------------------------click on try another button
+// // // -------------------------------click on try another button
 
-var wipeTheBoard = function() {
-  var clearOut = doucment.querySelectorAll(".box");
-  if (clearOut.length > 0) {
-    for (i = 0; i < clearOut.length; i++) {
-      let a = document.querySelector(".question");
-      a.removeChild(clearOut[i]);
-      let b = document.querySelectorAll(".choice");
-      b.removeChild(clearOut[i]);
-      let c = document.querySelector(".result");
-      b.removeChild(clearOut[i]);
-    }
-  }
-};
+// // var wipeTheBoard = function() {
+// //   var clearOut = doucment.querySelectorAll(".box");
+// //   if (clearOut.length > 0) {
+// //     for (i = 0; i < clearOut.length; i++) {
+// //       let a = document.querySelector(".question");
+// //       a.removeChild(clearOut[i]);
+// //       let b = document.querySelectorAll(".choice");
+// //       b.removeChild(clearOut[i]);
+// //       let c = document.querySelector(".result");
+// //       b.removeChild(clearOut[i]);
+// //     }
+// //   }
+// // };
 
-const next = document.querySelector(".next");
-next.addEventListener("click", function(evt) {
-  evt.preventDefault;
-  wipeTheBoard();
-});
+// // const next = document.querySelector(".next");
+// // next.addEventListener("click", function(evt) {
+// //   evt.preventDefault;
+// //   wipeTheBoard();
+// // });
+
+// // // how does it know what question it's on?
