@@ -103,17 +103,10 @@ function layout(num) {
   document.querySelector(".choice3").insertBefore(newAnswer3, referenceNode3);
 }
 
-// // const nextQuestion = document.querySelector(".next");
-// // nextQuestion.addEventListener("click", function(evt) {
-// //   evt.preventDefault;
-// //   wipeTheBoard();
-// //   layout(index++);
-// });
-
 function atEnd() {
   if (index === 9) {
     console.log("it's over");
-    const resultsBox = document.querySelector(".next");
+    // const resultsBox = document.querySelector(".next");
     // resultsBox.addEventListener("click", function(evt) {
     //   evt.preventDefault;
     //   wipeTheBoard();
@@ -152,7 +145,7 @@ function checkAnswer() {
   console.log(index);
   if (thisAnswer === trivia[index].correctAnswer) {
     function increaseScore() {
-      scoreStart.innerHTML = score + 1;
+      scoreStart.innerHTML = score++;
     }
     increaseScore();
 
@@ -206,6 +199,14 @@ function wipeTheBoard() {
 }
 
 // ---------------------end game
+
+// for index 0 - 8 show regular result prompt
+
+// when index = 9
+
+// show the result prompt but change button to "show results"
+
+// then have show results button link to final message
 
 // const resultsBox = document.querySelector(".next");
 // resultsBox.addEventListener("click", function(evt) {
