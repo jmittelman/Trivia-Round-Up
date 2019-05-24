@@ -35,3 +35,5 @@ responsive design
 randomize answer order
 end game message with total score
 reset button set index to zero
+
+make it so user can't skip Try Another button and instead click answer multiple times and get multiple messages
