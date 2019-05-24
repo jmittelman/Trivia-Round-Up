@@ -1,9 +1,5 @@
 # Project-1-Trivia
 
-responsive
-randomize answers
-score message
-
 // --------------functinality notes
 
 // show modal box with "Ready?/Get Started" button
@@ -17,9 +13,8 @@ score message
 // when they press select button compare answer in that box to correct answer
 
 // if answer is correct answer return correct answer prompt
+and increment the score
 // if answer is wrong answer return wrong answer prompt
-
-// if correct answer increment the score
 
 // use event listener for click on Try Another button
 
@@ -30,3 +25,12 @@ score message
 // continue for total 10 times
 
 // show modal box with final score and ask to play again
+
+-------------------------unfinished/ wish list -->
+
+have a refresh button if people close the modal without hitting the "let's get started button"
+include select buttons with items removed when items are cleared out after question is answered
+
+responsive design
+randomize answer order
+end game message with total score
