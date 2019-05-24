@@ -126,3 +126,28 @@ footer {
   padding: 20px;
   margin: 0;
 }
+
+.final-message {
+  margin: 30px auto;
+  width: 600px;
+}
+
+.farewell {
+  background: #d82f4e;
+  text-align: center;
+  color: #303844;
+  font-family: "Stylish", sans-serif;
+}
+
+.note {
+  font-size: 30px;
+}
+
+.poem {
+  font-size: 20px;
+}
+
+.total {
+  color: white;
+  font-size: 30px;
+}

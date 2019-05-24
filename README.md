@@ -34,3 +34,4 @@ include select buttons with items removed when items are cleared out after quest
 responsive design
 randomize answer order
 end game message with total score
+reset button set index to zero
