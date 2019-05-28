@@ -56,6 +56,10 @@ header {
   left: 95px;
 }
 
+a {
+  text-decoration: none;
+}
+
 h1 {
   margin: 40px 0 20px 30px;
   font-family: "Stylish", sans-serif;
