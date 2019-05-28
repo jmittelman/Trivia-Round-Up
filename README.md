@@ -1,8 +1,8 @@
-# Project 1 - Trivia Round-Up
+# Trivia Round-Up
 
 A rodeo themed trivia game that will test your knowledge of sports like bull riding, barrel racing, calf roping, steer wrestling, and bareback riding. Saddle up!
 
-![Site Screenshot](https://triplespice.github.io/Project-1-Trivia/images/Trivia%20Round-Up%20Screenshot.png)
+![Site Screenshot](https://triplespice.github.io/Trivia-Round-Up/images/Trivia%20Round-Up%20Screenshot.png)
 
 ## Built With
 
@@ -14,7 +14,7 @@ A rodeo themed trivia game that will test your knowledge of sports like bull rid
 - To start, user clicks a button on a modal box.
 - The user is presented with a question and three possible answers.
 - Upon making a selection, the user is presented with a result message.
-- The message will either say "correct" and increment the score, or it will say "wrong" and show the correct answer.
+- The message will either say "correct" and increment the score, or it will say "wrong" and reveal the correct answer.
 - Next, the user can click a button to be presented another question.
 - There are ten questions to cycle through. Upon completion, the user will be able to click a button to see the final results.
 
