@@ -4,40 +4,24 @@ A rodeo themed trivia game that will test your knowledge of sports like bull rid
 
 ![Site Screenshot](https://triplespice.github.io/Project-1-Trivia/images/Trivia%20Round-Up%20Screenshot.png)
 
-## Functionality Notes
+## Built With
 
-// show modal box with "Ready?/Get Started" button
+- HTML, CSS, JavaScript
+- Bootstrap
 
-// use event listener for click on button
+## Current Features
 
-// remove modal and then provide question 1 by adding question text
-// to the question box and answer text to the answer boxes
+- To start, user clicks a button on a modal box.
+- The user is presented with a question and three possible answers.
+- Upon making a selection, the user is presented with a result message.
+- The message will either say "correct" and increment the score, or it will say "wrong" and show the correct answer.
+- Next, the user can click a button to be presented another question.
+- There are ten questions to cycle through. Upon completion, the user will be able to click a button to see the final results.
 
-// assign answers to the three containers
-// when they press select button compare answer in that box to correct answer
+## Wish List
 
-// if answer is correct answer return correct answer prompt
-and increment the score
-// if answer is wrong answer return wrong answer prompt
+In the future I hope to develop further functionality including:
 
-// use event listener for click on Try Another button
-
-// clear question box and answer boxes
-
-// then provide question 2
-
-// continue for total 10 times
-
-// show modal box with final score and ask to play again
-
--------------------------unfinished/ wish list -->
-
-have a refresh button if people close the modal without hitting the "let's get started button"
-include select buttons with items removed when items are cleared out after question is answered
-
-responsive design
-randomize answer order
-end game message with total score
-reset button set index to zero
-
-make it so user can't skip Try Another button and instead click answer multiple times and get multiple messages
+- Add time-based scoring
+- Track scores across games (even if the page is reloaded)
+- Allow users to compete against each other on a high-score board.
