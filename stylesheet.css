@@ -57,7 +57,14 @@ header {
 }
 
 a {
+  color: white;
   text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 h1 {
