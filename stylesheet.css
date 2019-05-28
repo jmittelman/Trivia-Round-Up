@@ -37,7 +37,7 @@ header {
   justify-content: space-between;
 }
 .scoreCard {
-  background: url("barrel2.png") no-repeat center;
+  background: url("images/barrel2.png") no-repeat center;
   background-size: 60%;
   width: 150px;
   text-align: center;

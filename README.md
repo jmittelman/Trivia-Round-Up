@@ -1,6 +1,10 @@
-# Project-1-Trivia
+# Project 1 - Trivia Round-Up
 
-// --------------functinality notes
+A rodeo themed trivia game that will test your knowledge of sports like bull riding, barrel racing, calf roping, steer wrestling, and bareback riding. Saddle up!
+
+![screenshot]("images/Trivia Round-Up Screenshot.png")
+
+## Functinality Notes
 
 // show modal box with "Ready?/Get Started" button
 
