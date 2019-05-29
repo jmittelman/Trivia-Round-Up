@@ -44,11 +44,11 @@ var trivia = [
     question:
       "What two PBR bulls have the dubious distinction of having caused fatalities?",
     answers: [
-      "Skat Cat & Strawberry Wine",
-      "Playmate & Hammer Time",
-      "Red Wolf & Promiseland"
+      "Skat Cat and Strawberry Wine",
+      "Playmate and Hammer Time",
+      "Red Wolf and Promiseland"
     ],
-    correctAnswer: "Red Wolf & Promiseland"
+    correctAnswer: "Red Wolf and Promiseland"
   },
   {
     question:
@@ -116,7 +116,7 @@ function atEnd() {
     //     `<div class="poem">When the squealin', buckin' bronco</br>Has become an ol' plow nag</br>When the saddle and the poncho</br>
     //   Hand up in an ol' grain bag;</br>When his bits and spurs are rustin'</br>And the ropin' is all through,</br>
     //   And there's no more round-ups startin'</br>What's the puncher goin' to do?</div>`,
-    //     `<button class="next btn btn-info">Try Again?</button>`
+    //     `<a href="https://triplespice.github.io/Trivia-Round-Up/" class="next btn btn-info">Try Again?</a>`
     //   ].join("");
 
     //   let finalChoice = document.createElement("div");
