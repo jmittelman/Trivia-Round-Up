@@ -1,3 +1,5 @@
+// -------------- data
+
 var trivia = [
   {
     question:
@@ -63,7 +65,7 @@ var trivia = [
   }
 ];
 
-// --------------------------  get started
+// ---------  get started
 
 var score = 0;
 const scoreStart = document.querySelector(".score");
@@ -71,12 +73,16 @@ scoreStart.innerHTML = score;
 
 var index = 0;
 
+// ------event listener on modal button then invokes layout function
+
 const getStarted = document.querySelector(".readyStart");
 getStarted.addEventListener("click", function(evt) {
   evt.preventDefault();
   $("#myModal").modal("hide");
   layout(index);
 });
+
+// ---------  displays 1 question and 3 answers
 
 function layout(num) {
   let newQuestion = document.createElement("div");
@@ -103,28 +109,42 @@ function layout(num) {
   document.querySelector(".choice3").insertBefore(newAnswer3, referenceNode3);
 }
 
-function atEnd() {
-  if (index === 9) {
-    console.log("it's over");
-    // const resultsBox = document.querySelector(".next");
-    // resultsBox.addEventListener("click", function(evt) {
-    //   evt.preventDefault;
-    //   wipeTheBoard();
-    //   var html3 = [
-    //     `<div class="card-body note">That rough stock could have bucked off even the most grizzled cowpunch</div>`,
-    //     `<div class="card-body total">Your Score: ${score} out of 10</div>`,
-    //     `<div class="poem">When the squealin', buckin' bronco</br>Has become an ol' plow nag</br>When the saddle and the poncho</br>
-    //   Hand up in an ol' grain bag;</br>When his bits and spurs are rustin'</br>And the ropin' is all through,</br>
-    //   And there's no more round-ups startin'</br>What's the puncher goin' to do?</div>`,
-    //     `<a href="https://triplespice.github.io/Trivia-Round-Up/" class="next btn btn-info">Try Again?</a>`
-    //   ].join("");
+// -------------- displays final message and results
 
-    //   let finalChoice = document.createElement("div");
-    //   finalChoice.className = "farewell card box";
-    //   finalChoice.innerHTML = html3;
-    //   document.querySelector(".final-message").appendChild(finalChoice);
-  }
+function atEnd() {
+  console.log("it's over");
+  let resultContainer = document.querySelector(".result");
+  const seeResults = document.createElement("button");
+  seeResults.classList.add("next");
+  seeResults.classList.add("btn");
+  seeResults.classList.add("btn-info");
+  resultContainer.appendChild(seeResults);
+  seeResults.innerText = "See Results";
+  const resultsBox = document.querySelector(".next");
+  resultsBox.addEventListener("click", function(evt) {
+    evt.preventDefault;
+
+    wipeTheBoard();
+    var html3 = [
+      `<div class="card-body note">That rough stock could have bucked off even the most grizzled cowpunch</div>`,
+      `<div class="card-body total">Your Score: ${score} out of 10</div>`,
+      `<div class="poem">When the squealin', buckin' bronco</br>Has become an ol' plow nag</br>When the saddle and the poncho</br>
+      Hand up in an ol' grain bag;</br>When his bits and spurs are rustin'</br>And the ropin' is all through,</br>
+      And there's no more round-ups startin'</br>What's the puncher goin' to do?</div>`,
+      `<a href="https://triplespice.github.io/Trivia-Round-Up/" class="next btn btn-info">Try Again?</a>`
+    ].join("");
+
+    let finalChoice = document.createElement("div");
+    finalChoice.className = "farewell card box";
+    finalChoice.innerHTML = html3;
+    document.querySelector(".final-message").appendChild(finalChoice);
+
+    // resultContainer.removeChild(seeResults);
+  });
 }
+
+// --------looks at text answers box of selection and compares to correct answer
+//  then runs checkAnswer function
 
 let thisAnswer = "";
 
@@ -140,6 +160,8 @@ answers.addEventListener("click", e => {
   e.preventDefault();
   resultsPrompt(e);
 });
+
+// --------- display "correct" or "incorrect" message and increment score if appropriate
 
 function checkAnswer() {
   console.log(index);
@@ -162,8 +184,11 @@ function checkAnswer() {
     tryAnother.addEventListener("click", function(evt) {
       evt.preventDefault;
       wipeTheBoard();
-      atEnd();
-      layout(index);
+      if (index >= trivia.length) {
+        atEnd();
+      } else {
+        layout(index);
+      }
     });
   } else {
     var html2 = [
@@ -178,15 +203,23 @@ function checkAnswer() {
     madeChoice2.innerHTML = html2;
     document.querySelector(".result").appendChild(madeChoice2);
     const tryAnother = document.querySelector(".next");
+    if (index >= trivia.length) {
+      tryAnother.innerText = "See Results";
+    }
     tryAnother.addEventListener("click", function(evt) {
       evt.preventDefault;
       wipeTheBoard();
-      atEnd();
-      layout(index);
+      if (index >= trivia.length) {
+        atEnd();
+      } else {
+        layout(index);
+      }
     });
   }
   index++;
 }
+
+// ---------------- clears the board of question and answers
 
 function wipeTheBoard() {
   var clearOut = document.querySelectorAll(".box");
@@ -197,31 +230,3 @@ function wipeTheBoard() {
     }
   }
 }
-
-// ---------------------end game
-
-// for index 0 - 8 show regular result prompt
-
-// when index = 9
-
-// show the result prompt but change button to "show results"
-
-// then have show results button link to final message
-
-// const resultsBox = document.querySelector(".next");
-// resultsBox.addEventListener("click", function(evt) {
-//   evt.preventDefault;
-//   wipeTheBoard();
-//   var html3 = [
-//     `<div class="card-body note">That rough stock could have bucked off even the most grizzled cowpunch</div>`,
-//     `<div class="card-body total">Your Score: ${score} out of 10</div>`,
-//     `<div class="poem">When the squealin', buckin' bronco</br>Has become an ol' plow nag</br>When the saddle and the poncho</br>
-//   Hand up in an ol' grain bag;</br>When his bits and spurs are rustin'</br>And the ropin' is all through,</br>
-//   And there's no more round-ups startin'</br>What's the puncher goin' to do?</div>`,
-//     `<button class="next btn btn-info">Try Again?</button>`
-//   ].join("");
-
-//   let finalChoice = document.createElement("div");
-//   finalChoice.className = "farewell card box";
-//   finalChoice.innerHTML = html3;
-//   document.querySelector(".final-message").appendChild(finalChoice);
