@@ -113,34 +113,34 @@ function layout(num) {
 
 function atEnd() {
   console.log("it's over");
-  let resultContainer = document.querySelector(".result");
-  const seeResults = document.createElement("button");
-  seeResults.classList.add("next");
-  seeResults.classList.add("btn");
-  seeResults.classList.add("btn-info");
-  resultContainer.appendChild(seeResults);
-  seeResults.innerText = "See Results";
-  const resultsBox = document.querySelector(".next");
-  resultsBox.addEventListener("click", function(evt) {
-    evt.preventDefault;
+  // let resultContainer = document.querySelector(".result");
+  // const seeResults = document.createElement("button");
+  // seeResults.classList.add("next");
+  // seeResults.classList.add("btn");
+  // seeResults.classList.add("btn-info");
+  // resultContainer.appendChild(seeResults);
+  // tryAgain.innerText = "See Results";
+  // const resultsBox = document.querySelector(".next");
+  // tryAgain.addEventListener("click", function(evt) {
+  //   evt.preventDefault;
 
-    wipeTheBoard();
-    var html3 = [
-      `<div class="card-body note">That rough stock could have bucked off even the most grizzled cowpunch</div>`,
-      `<div class="card-body total">Your Score: ${score} out of 10</div>`,
-      `<div class="poem">When the squealin', buckin' bronco</br>Has become an ol' plow nag</br>When the saddle and the poncho</br>
+  // wipeTheBoard();
+  var html3 = [
+    `<div class="card-body note">That rough stock could have bucked off even the most grizzled cowpunch</div>`,
+    `<div class="card-body total">Your Score: ${score} out of 10</div>`,
+    `<div class="poem">When the squealin', buckin' bronco</br>Has become an ol' plow nag</br>When the saddle and the poncho</br>
       Hand up in an ol' grain bag;</br>When his bits and spurs are rustin'</br>And the ropin' is all through,</br>
       And there's no more round-ups startin'</br>What's the puncher goin' to do?</div>`,
-      `<a href="https://triplespice.github.io/Trivia-Round-Up/" class="next btn btn-info">Try Again?</a>`
-    ].join("");
+    `<a href="https://triplespice.github.io/Trivia-Round-Up/" class="next btn btn-info">Try Again?</a>`
+  ].join("");
 
-    let finalChoice = document.createElement("div");
-    finalChoice.className = "farewell card box";
-    finalChoice.innerHTML = html3;
-    document.querySelector(".final-message").appendChild(finalChoice);
+  let finalChoice = document.createElement("div");
+  finalChoice.className = "farewell card box";
+  finalChoice.innerHTML = html3;
+  document.querySelector(".final-message").appendChild(finalChoice);
 
-    // resultContainer.removeChild(seeResults);
-  });
+  // resultContainer.removeChild(seeResults);
+  // });
 }
 
 // --------looks at text answers box of selection and compares to correct answer
@@ -167,7 +167,8 @@ function checkAnswer() {
   console.log(index);
   if (thisAnswer === trivia[index].correctAnswer) {
     function increaseScore() {
-      scoreStart.innerHTML = score++;
+      score++;
+      scoreStart.innerText = score;
     }
     increaseScore();
 
@@ -181,10 +182,14 @@ function checkAnswer() {
     madeChoice.innerHTML = html;
     document.querySelector(".result").appendChild(madeChoice);
     const tryAnother = document.querySelector(".next");
+    if (index >= trivia.length - 1) {
+      tryAnother.innerText = "See Results";
+    }
     tryAnother.addEventListener("click", function(evt) {
       evt.preventDefault;
       wipeTheBoard();
       if (index >= trivia.length) {
+        // tryAnother.innerText = "See Results";
         atEnd();
       } else {
         layout(index);
@@ -203,7 +208,7 @@ function checkAnswer() {
     madeChoice2.innerHTML = html2;
     document.querySelector(".result").appendChild(madeChoice2);
     const tryAnother = document.querySelector(".next");
-    if (index >= trivia.length) {
+    if (index >= trivia.length - 1) {
       tryAnother.innerText = "See Results";
     }
     tryAnother.addEventListener("click", function(evt) {
