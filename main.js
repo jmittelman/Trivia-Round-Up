@@ -140,12 +140,6 @@ function checkAnswer() {
     }
     increaseScore();
 
-    // var listener = function() {
-    //   // do something
-    // };
-
-    // answers.removeEventListener("click", event);
-
     var html = [
       '<div class="card-body">Correct. Great job, pardner!</div>',
       '<button class="next btn btn-info">Try Another</button>'
@@ -163,7 +157,6 @@ function checkAnswer() {
       evt.preventDefault;
       wipeTheBoard();
       if (index >= trivia.length) {
-        // tryAnother.innerText = "See Results";
         atEnd();
       } else {
         layout(index);
