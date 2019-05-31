@@ -109,41 +109,7 @@ function layout(num) {
   document.querySelector(".choice3").insertBefore(newAnswer3, referenceNode3);
 }
 
-// -------------- displays final message and results
-
-function atEnd() {
-  console.log("it's over");
-  // let resultContainer = document.querySelector(".result");
-  // const seeResults = document.createElement("button");
-  // seeResults.classList.add("next");
-  // seeResults.classList.add("btn");
-  // seeResults.classList.add("btn-info");
-  // resultContainer.appendChild(seeResults);
-  // tryAgain.innerText = "See Results";
-  // const resultsBox = document.querySelector(".next");
-  // tryAgain.addEventListener("click", function(evt) {
-  //   evt.preventDefault;
-
-  // wipeTheBoard();
-  var html3 = [
-    `<div class="card-body note">That rough stock could have bucked off even the most grizzled cowpunch</div>`,
-    `<div class="card-body total">Your Score: ${score} out of 10</div>`,
-    `<div class="poem">When the squealin', buckin' bronco</br>Has become an ol' plow nag</br>When the saddle and the poncho</br>
-      Hand up in an ol' grain bag;</br>When his bits and spurs are rustin'</br>And the ropin' is all through,</br>
-      And there's no more round-ups startin'</br>What's the puncher goin' to do?</div>`,
-    `<a href="https://triplespice.github.io/Trivia-Round-Up/" class="next btn btn-info">Try Again?</a>`
-  ].join("");
-
-  let finalChoice = document.createElement("div");
-  finalChoice.className = "farewell card box";
-  finalChoice.innerHTML = html3;
-  document.querySelector(".final-message").appendChild(finalChoice);
-
-  // resultContainer.removeChild(seeResults);
-  // });
-}
-
-// --------looks at text answers box of selection and compares to correct answer
+// --------looks at text in answer box of selection and compares to correct answer
 //  then runs checkAnswer function
 
 let thisAnswer = "";
@@ -156,9 +122,11 @@ function resultsPrompt(object) {
 }
 
 const answers = document.querySelector(".answers");
-answers.addEventListener("click", e => {
-  e.preventDefault();
-  resultsPrompt(e);
+
+answers.addEventListener("click", function handleClick(event) {
+  event.preventDefault();
+  resultsPrompt(event);
+  answers.removeEventListener("click", handleClick);
 });
 
 // --------- display "correct" or "incorrect" message and increment score if appropriate
@@ -171,6 +139,12 @@ function checkAnswer() {
       scoreStart.innerText = score;
     }
     increaseScore();
+
+    // var listener = function() {
+    //   // do something
+    // };
+
+    // answers.removeEventListener("click", event);
 
     var html = [
       '<div class="card-body">Correct. Great job, pardner!</div>',
@@ -193,6 +167,11 @@ function checkAnswer() {
         atEnd();
       } else {
         layout(index);
+        answers.addEventListener("click", function handleClick(event) {
+          event.preventDefault();
+          resultsPrompt(event);
+          answers.removeEventListener("click", handleClick);
+        });
       }
     });
   } else {
@@ -218,6 +197,11 @@ function checkAnswer() {
         atEnd();
       } else {
         layout(index);
+        answers.addEventListener("click", function handleClick(event) {
+          event.preventDefault();
+          resultsPrompt(event);
+          answers.removeEventListener("click", handleClick);
+        });
       }
     });
   }
@@ -234,4 +218,24 @@ function wipeTheBoard() {
       a.removeChild(clearOut[i]);
     }
   }
+}
+
+// -------------- displays final message and results
+
+function atEnd() {
+  console.log("it's over");
+
+  var html3 = [
+    `<div class="card-body note">That rough stock could have bucked off even the most grizzled cowpunch</div>`,
+    `<div class="card-body total">Your Score: ${score} out of 10</div>`,
+    `<div class="poem">When the squealin', buckin' bronco</br>Has become an ol' plow nag</br>When the saddle and the poncho</br>
+      Hand up in an ol' grain bag;</br>When his bits and spurs are rustin'</br>And the ropin' is all through,</br>
+      And there's no more round-ups startin'</br>What's the puncher goin' to do?</div>`,
+    `<a href="https://triplespice.github.io/Trivia-Round-Up/" class="next btn btn-info">Try Again?</a>`
+  ].join("");
+
+  let finalChoice = document.createElement("div");
+  finalChoice.className = "farewell card box";
+  finalChoice.innerHTML = html3;
+  document.querySelector(".final-message").appendChild(finalChoice);
 }
