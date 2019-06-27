@@ -1,5 +1,6 @@
 body {
   background: #d82f4e;
+  overscroll-behavior: none;
 }
 .card {
   border: none;
