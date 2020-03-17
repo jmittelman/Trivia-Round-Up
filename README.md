@@ -2,7 +2,7 @@
 
 A rodeo themed trivia game that will test your knowledge of sports like bull riding, barrel racing, calf roping, steer wrestling, and bareback riding. Saddle up!
 
-![Site Screenshot](https://triplespice.github.io/Trivia-Round-Up/images/Trivia%20Round-Up%20Screenshot.png)
+![Site Screenshot](https://jmittelman.github.io/Trivia-Round-Up/images/Trivia%20Round-Up%20Screenshot.png)
 
 ## Built With
 
